@@ -1,0 +1,254 @@
+/* ========================================
+   CSS VARIABLES & ROOT STYLES
+   ======================================== */
+
+:root {
+  --primary-blue: #003d7a;
+  --secondary-cyan: #00a8cc;
+  --dark-grey: #333;
+  --light-grey: #f5f5f5;
+  --border-color: #ddd;
+  --focus-shadow: rgba(0, 168, 204, 0.3);
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================
+   SECTION: FEATURES (Valeurs)
+   ======================================== */
+
+.features {
+  padding: 60px 5%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background: white;
+  gap: 20px;
+}
+
+.feature-item {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  padding: 20px;
+  transition: var(--transition);
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+}
+
+.feature-item i {
+  font-size: 2.5rem;
+  color: var(--secondary-cyan);
+  margin-bottom: 15px;
+  display: block;
+}
+
+.feature-item h3 {
+  color: var(--primary-blue);
+  margin: 15px 0 10px;
+}
+
+.feature-item p {
+  color: var(--dark-grey);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========================================
+   SECTION: CONTACT & FORMULAIRE
+   ======================================== */
+
+.contact-section {
+  padding: 60px 5%;
+  background: var(--primary-blue);
+  color: white;
+}
+
+.contact-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  color: var(--dark-grey);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--dark-grey);
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: var(--secondary-cyan);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--secondary-cyan);
+  box-shadow: 0 0 5px var(--focus-shadow);
+}
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown) {
+  border-color: #e74c3c;
+}
+
+.form-group input:valid:not(:placeholder-shown),
+.form-group textarea:valid:not(:placeholder-shown) {
+  border-color: #27ae60;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+  max-height: 300px;
+}
+
+/* Submit Button */
+.contact-container button,
+.contact-container input[type="submit"] {
+  background: var(--primary-blue);
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  width: 100%;
+  margin-top: 10px;
+}
+
+.contact-container button:hover,
+.contact-container input[type="submit"]:hover {
+  background: var(--secondary-cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container button:active,
+.contact-container input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+.contact-container button:disabled,
+.contact-container input[type="submit"]:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+  background: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 30px 5%;
+  font-size: 0.9rem;
+  border-top: 3px solid var(--secondary-cyan);
+}
+
+footer strong {
+  color: white;
+}
+
+footer a {
+  color: var(--secondary-cyan);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .features {
+    padding: 40px 3%;
+  }
+
+  .feature-item {
+    flex: 0 1 100%;
+    min-width: auto;
+  }
+
+  .contact-container {
+    padding: 20px;
+  }
+
+  .contact-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .features {
+    padding: 30px 3%;
+  }
+
+  .feature-item i {
+    font-size: 2rem;
+  }
+
+  .contact-container {
+    padding: 15px;
+  }
+
+  .contact-container button,
+  .contact-container input[type="submit"] {
+    padding: 10px 20px;
+  }
+
+  footer {
+    padding: 20px 3%;
+    font-size: 0.85rem;
+  }
+}
